@@ -424,7 +424,7 @@ shinyServer(function(input, output, session) {
   output$PlotManhattanPvalues <- renderPlot({
     # Create a Progress object
     progress <- shiny::Progress$new()
-    progress$set(message = "Almost there...", value = 80)
+    progress$set(message = "Loading Data...", value = 80)
     # Close the progress when this reactive exits (even if there's an error)
     on.exit(progress$close())
     
@@ -480,7 +480,7 @@ shinyServer(function(input, output, session) {
   output$PlotManhattanPostProbs <- renderPlot({
     # Create a Progress object
     progress <- shiny::Progress$new()
-    progress$set(message = "Almost there...", value = 80)
+    progress$set(message = "Loading Data...", value = 80)
     # Close the progress when this reactive exits (even if there's an error)
     on.exit(progress$close())
     
@@ -719,11 +719,11 @@ shinyServer(function(input, output, session) {
   })
   
   # Dynamic UI --------------------------------------------------------------
-  output$ui_refProstatePaper <- renderUI(
+  output$ui_refPEACinfo <- renderUI(
     if(input$dataType %in% c("OncoArrayFineMapping",
                              "OncoArrayMeta","iCOGS")){
       includeMarkdown(
-        paste0("Data/ProstateData/", input$dataType, "/README.md"))
+        paste0("Data/PEACData/README.md"))
       } else if(input$dataType == "Custom") {
         includeMarkdown("Data/CustomDataExample/README.md")
         }
@@ -890,7 +890,7 @@ shinyServer(function(input, output, session) {
   output$plotMerge <- renderPlot({
     # Create a Progress object
     progress <- shiny::Progress$new()
-    progress$set(message = "Almost there...", value = 80)
+    progress$set(message = "Loading Data...", value = 80)
     # Close the progress when this reactive exits (even if there's an error)
     on.exit(progress$close())
 

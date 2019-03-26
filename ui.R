@@ -16,14 +16,29 @@ tweaks <-
                               -column-fill: auto;
                               }
                               "))),
+    tags$head(tags$style(HTML("
+                                .navbar-nav {
+                                float: none !important;
+                                }
+                                .navbar-nav > li:nth-child(5) {
+                                float: right;
+                                }
+                                "))),
+    
     #push it down 70px to avoid going under navbar
-    tags$style(type = "text/css", "body {padding-top: 70px;}"),
+    tags$style(type = "text/css", '.navbar { background-color: #0d3273; # Set ribbon to QMUL color
+                           font-family: Arial;
+                           font-size: 13px;
+                           color: #ffffff; 
+                            }', '.navbar-default .navbar-brand {
+                             color: #ffffff;
+               }',
+                          "body {padding-top: 70px;}"),
     tags$head(
-      tags$style(HTML("
-                      #graphplotSNP_LDnetwork {
-                        border: 1px solid grey;
-                      }
-                      "))),
+      tags$style(HTML("#graphplotSNP_LDnetwork {border: 1px solid grey;}"))),
+
+
+    
     #hide red error messages
     tags$style(type="text/css",
                ".shiny-output-error { visibility: hidden; }",
@@ -35,15 +50,34 @@ shinyUI(
   navbarPage(
     # Application title
     id = "navBarPageID",
-    #title = "LocusExplorer v0.7",
-    title = div(h4("LocusExplorer v0.7.1",
-                   style = "margin-top: 0px;"),
-                img(src = "icr_logo_white_on_black.PNG", height = "70px",
-                    style = "position: relative; top: -60px; right: -800px;")),
+    #title = "PEAC LocusExplorer Tweak",
+    title = div(#h4("PEAC LocusExplorer Tweak",
+                #   style = "margin-top: 0px;"),
+                img(src = "190335.png", height = "40px",
+                    style = "position: relative; top: -10px; right: 0px;")),
     windowTitle = "LocusExplorer",
     fluid = FALSE,
     position = "fixed-top",
     inverse = TRUE,
+    
+    # Summary Info ------------------------------------------------------------
+    tabPanel("The PEAC Data", 
+             # fluidPage(
+             #   column(10, 
+                      includeMarkdown("Markdown/PEACinfo.md")), 
+                        # column(2, 
+                        #        fluidRow(br(), br(), br(), br(), br(), br(), div(img(src="/barts_blue_large.gif", height=50)), br(), br()),
+                        #        fluidRow(div(img(src="/glasgow.png", height=50)), br(), br()),
+                        #        fluidRow(div(img(src="/oxford.png", height=50)), br(), br()),
+                        #        fluidRow(div(img(src="/birmingham.png", height=50)), br(), br()),
+                        #        fluidRow(div(img(src="/cardiff.png", height=50)))
+                        # ))),
+             
+             
+             
+             # includeMarkdown("Data/PEACData/README.md"), 
+             # #includeMarkdown("markdown/PEAC_info.md"), 
+             # div(img(src="barts_blue_large.gif", height=70)) ),
     
     # 1.Input Data ------------------------------------------------------------
     tabPanel(
@@ -82,12 +116,9 @@ shinyUI(
       mainPanel(
         tabsetPanel(
           tabPanel("Summary",
-                   h4("Summary"),
-                   hr(),
                    # if Prostate data is selected then link to relevant paper
                    # Abstract pudmedID
-                   uiOutput("ui_refProstatePaper"),
-                   hr()
+                   uiOutput("ui_refPEACinfo")
                    # conditionalPanel("input.dataType == 'OncoArrayFineMapping' ||
                    #                  input.dataType == 'OncoArrayMeta' ||
                    #                  input.dataType == 'iCOGS'",
@@ -134,11 +165,7 @@ shinyUI(
                    hr(),
                    includeMarkdown("Data/wgEncodeBroadHistone/README.md")
                    #helpText("Scores filtered at 5+, and rounded and set maximum value to 100.")
-                   ),
-          tabPanel("Input File Format",
-                   h4("Input File Format"),
-                   hr(),
-                   includeMarkdown("Markdown/InputFileFormat.md"))
+                   )
         )#tabsetPanel
         )#mainPanel
     ),#tabPanel - Data
@@ -414,7 +441,7 @@ shinyUI(
              
     ), #tabPanel - "Final Plot"
     # 4.Help ------------------------------------------------------------------
-    navbarMenu(title = "Help",
+    navbarMenu(title = "Help", 
                #title = NULL,
                #icon = icon("ambulance"),
                icon = icon("info"),

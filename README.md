@@ -1,3 +1,9 @@
+## PEAC Locus Explorer
+
+This repo creates a shiny app to explore the PEAC QTL data. This was inspired by (and forked from) the Institute of Cancer Research's Oncogenetics team. Their code can be found on GitHub [here](https://github.com/oncogenetics/LocusExplorer). Below is their ReadMe input:
+
+-----
+
 ## An interactive graphical illustration of genetic associations and their biological context.
 
 
@@ -7,7 +13,7 @@
 
 
 ### Disclaimer
-LocusExplorer should be used for illustrative purposes only. Any results provided by LocusExplorer should be used with caution. 
+LocusExplorer should be used for illustrative purposes only. Any results provided by LocusExplorer should be used with caution.
 
 ### Availability  
 The source code and installation instructions for LocusExplorer are available at https://github.com/oncogenetics/LocusExplorer.
@@ -89,8 +95,8 @@ Bioinformatics first published online November 20, 2015 doi:10.1093/bioinformati
     + Fine-mapping of Prostate Cancer Susceptibility Loci in a Large Meta-Analysis Identifies Candidate Causal Variants. Tokhir Dadaev, *et al.*    
     + Prostate cancer meta-analysis of more than 140,000 men identifies 63 novel prostate cancer susceptibility loci.  Fredrick R. Schumacher, *et al.*       
     + Germline Variation at 8q24 and Prostate Cancer Risk in Men of European Ancestry. Marco Matejcic, *et al.*    
-    
-    
+
+
 ### Frequently asked questions  
 See [FAQ](https://github.com/oncogenetics/LocusExplorer/blob/master/Markdown/FAQ.md).
 
@@ -105,4 +111,3 @@ https://github.com/oncogenetics/LocusExplorer/issues
 
 [![Issue Stats](http://issuestats.com/github/oncogenetics/LocusExplorer/badge/issue)](http://issuestats.com/github/oncogenetics/LocusExplorer)
 [![Issue Stats](http://issuestats.com/github/oncogenetics/LocusExplorer/badge/pr)](http://issuestats.com/github/oncogenetics/LocusExplorer)
-
